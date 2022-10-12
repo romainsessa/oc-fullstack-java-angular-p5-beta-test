@@ -30,7 +30,8 @@ describe('MeComponent', () => {
         MatIconModule,
         MatInputModule
       ],
-      providers: [{ provide: SessionService, useValue: mockSessionService }],
+      providers: [
+        { provide: SessionService, useValue: mockSessionService }],
     })
       .compileComponents();
 

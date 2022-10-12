@@ -39,4 +39,20 @@ describe('LoginComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should log in', () => {
+
+    const user = {
+      email: "yoga@studio.com",
+      password: "test!1234"
+    }
+
+    component.form.setValue(user);
+    fixture.detectChanges();
+    expect(component.form.valid).toBeTruthy();
+  
+    component.submit();
+    expect(component.onError).toBeFalsy();
+  });
+
 });

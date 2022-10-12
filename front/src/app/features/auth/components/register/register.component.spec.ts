@@ -37,4 +37,20 @@ describe('RegisterComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should register', () => {
+    const user = {
+      firstName: "test",
+      lastName: "test",
+      email: "test@studio.com",
+      password: "test!1234"
+    }
+
+    component.form.setValue(user);
+    fixture.detectChanges();
+    expect(component.form.valid).toBeTruthy();
+  
+    component.submit();
+    expect(component.onError).toBeFalsy();
+  });
 });

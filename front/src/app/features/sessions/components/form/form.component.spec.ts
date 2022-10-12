@@ -56,4 +56,20 @@ describe('FormComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should submit', () => {
+    const session = {
+      name: "test",
+      date: "2025-11-01",
+      teacher_id: 1,
+      description: "session desc"
+    }
+
+    component?.sessionForm?.setValue(session);
+    fixture.detectChanges();
+    expect(component?.sessionForm?.valid).toBeTruthy();
+  
+    component.submit();
+    
+  });
 });
